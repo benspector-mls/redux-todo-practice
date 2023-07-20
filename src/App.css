@@ -7,21 +7,40 @@
   height: 100%;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+nav ul {
+  display: flex;
+  gap: 1em;
+}
+
 main {
-  padding: 3rem;
-  place-items: center;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .light {
   background: white;
   color: black;
+  color-scheme: light;
 }
 
-.dark {
+.dark, .dark button {
   background: black;
   color: white;
+  color-scheme: dark;
+}
+
+#todos, #login {
+  margin: auto;
+  min-width: 300px;
 }
 
 form {
@@ -39,6 +58,7 @@ ul {
   display: flex;
   justify-content: space-between;
   border: 1px solid grey;
+  margin-bottom: .2rem;
 }
 
 .todo-item *:nth-child(1) {
@@ -57,7 +77,10 @@ ul {
   background-color: lightgrey;
 }
 
+input {
+  margin: .2rem;
+}
+
 #todo-form {
   display: flex;
-  margin: 1rem 0;
 }

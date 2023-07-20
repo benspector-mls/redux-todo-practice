@@ -6,6 +6,7 @@ import Login from './components/Login'
 import ChangeTheme from './components/ChangeTheme'
 import Todos from './components/Todos'
 import { useSelector } from 'react-redux';
+import { Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
@@ -14,11 +15,20 @@ function App() {
 
   return (
     <div className={`App ${theme}`}  >
-      <main>
+      <nav>
         <ChangeTheme />
-        <Profile />
-        <Login />
-        <Todos />
+        <ul>
+          <Link to='/'>Todos</Link>
+          <Link to='/login'>Login</Link>
+          <Link to='/profile'>Profile</Link>
+        </ul>
+      </nav>
+      <main>
+        <Routes>
+          <Route path="/" element={<Todos />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+        </Routes>
       </main>
     </div>
   )

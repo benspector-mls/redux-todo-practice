@@ -7,7 +7,7 @@ function Login() {
   const [userLoginInput, setUserLoginInput] = useState({ name: '', age: 0, email: ''})
 
   return (
-    <div>
+    <div id='login'>
       <form>
         <input type="text" placeholder='name' onChange={e => setUserLoginInput({...userLoginInput, name: e.target.value})}/>
         <input type="text" placeholder='age' onChange={e => setUserLoginInput({...userLoginInput, age: Number(e.target.value)})}/>

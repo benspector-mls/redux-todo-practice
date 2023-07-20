@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-let todoID = 1;
-const initialStateValue = [];
+const initialStateValue = JSON.parse(localStorage.getItem('todos')) || [];
+let todoID = initialStateValue.reduce((maxId, current) => (maxId > current.id) ? maxId : current.id, 0) + 1
 
 const todosSlice = createSlice({
   name: 'todos',

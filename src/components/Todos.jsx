@@ -7,19 +7,19 @@ function Todos() {
   const todos = useSelector(state => state.todos.value);
   const dispatch = useDispatch();
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addTodo(newTodoText));
+    setNewTodoText('')
   }
 
   return (
-    <div> 
-      <h1>Todos</h1>
+    <div id='todos'> 
       <form onSubmit={handleSubmit} id='todo-form'>
-        <input type="text" name="new-todo" id="new-todo" placeholder='New Todo' onChange={e => setNewTodoText(e.target.value)}/>
+        <input type="text" name="new-todo" value={newTodoText} id="new-todo" placeholder='New Todo' onChange={e => setNewTodoText(e.target.value)}/>
         <input type="submit" value="+" />
       </form>
+      <h2>My Todos</h2>
       <ul id='todos'>
         {
           todos.map(todo => <Todo key={todo.id} todo={todo}/> )

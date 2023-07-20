@@ -1,0 +1,63 @@
+#root {
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+main {
+  padding: 3rem;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.light {
+  background: white;
+  color: black;
+}
+
+.dark {
+  background: black;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+}
+
+.todo-item *:nth-child(1) {
+
+  padding: .2rem .5rem;
+  width: 100%;
+}
+
+.complete {
+  text-decoration: line-through;
+
+}
+
+.todo-item *:nth-child(2) {
+  padding: .2rem .5rem;
+  background-color: lightgrey;
+}
+
+#todo-form {
+  display: flex;
+  margin: 1rem 0;
+}
